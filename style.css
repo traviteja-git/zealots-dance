@@ -425,87 +425,120 @@ img { display: block; max-width: 100%; }
 /* ── Crew ── */
 .crew { background: var(--bg); }
 
-.crew-legend {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-.legend-item {
+.crew-group-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 1.25rem;
+}
+.crew-group-label-alumni {
   color: var(--fg-muted);
+  margin-top: 3rem;
 }
-.legend-dot {
-  width: 10px; height: 10px;
+.crew-group-dot {
+  width: 8px; height: 8px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
-.legend-dot.active { background: #4ade80; }
-.legend-dot.alumni { background: var(--fg-muted); }
+.crew-group-dot.active { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+.crew-group-dot.alumni { background: var(--fg-muted); }
 
+/* Active grid — large cards */
 .crew-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
+.crew-grid-active {
+  grid-template-columns: repeat(3, 1fr);
+}
+.crew-grid-alumni {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .crew-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.875rem;
-  padding: 2rem 1.25rem 1.5rem;
   background: var(--bg-3);
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
-.crew-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
-.crew-card-active { border-color: rgba(74,222,128,0.2); }
-.crew-card-active:hover { border-color: rgba(74,222,128,0.45); box-shadow: 0 8px 32px rgba(74,222,128,0.08); }
+
+/* Active cards — big and bold */
+.crew-card-active {
+  padding: 2.5rem 1.5rem 2rem;
+  gap: 1.1rem;
+  border-color: rgba(74,222,128,0.2);
+}
+.crew-card-active:hover {
+  border-color: rgba(74,222,128,0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(74,222,128,0.1);
+}
+
+/* Alumni cards — compact and muted */
+.crew-card-alumni {
+  padding: 1.4rem 1.25rem 1.25rem;
+  gap: 0.75rem;
+  opacity: 0.7;
+  flex-direction: row;
+  text-align: left;
+}
+.crew-card-alumni:hover {
+  opacity: 1;
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
 
 .crew-avatar {
-  width: 72px;
-  height: 72px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.8rem;
   color: #fff;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
-.active-avatar { background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); }
-.alumni-avatar { background: linear-gradient(135deg, #555 0%, #333 100%); }
+/* Active avatar — large */
+.crew-card-active .crew-avatar {
+  width: 88px;
+  height: 88px;
+  font-size: 2.2rem;
+}
+/* Alumni avatar — small */
+.crew-card-alumni .crew-avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+}
 
-.crew-info { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.active-avatar { background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); }
+.alumni-avatar { background: linear-gradient(135deg, #444 0%, #2a2a2a 100%); }
+
+.crew-info { display: flex; flex-direction: column; gap: 0.25rem; }
+.crew-card-active .crew-info { align-items: center; }
+.crew-card-alumni .crew-info { align-items: flex-start; }
+
 .crew-name {
-  font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--fg);
 }
-.crew-tenure {
-  font-size: 0.78rem;
-  letter-spacing: 0.5px;
-}
+.crew-card-active .crew-name { font-size: 1.2rem; }
+.crew-name-alumni { font-size: 0.95rem; }
+
+.crew-tenure { letter-spacing: 0.5px; }
+.crew-card-active .crew-tenure { font-size: 0.82rem; }
+.crew-card-alumni .crew-tenure { font-size: 0.75rem; }
 .active-tenure { color: #4ade80; }
 .alumni-tenure { color: var(--fg-muted); }
-
-.crew-badge {
-  display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  margin-top: 0.1rem;
-}
-.badge-active { background: rgba(74,222,128,0.12); color: #4ade80; }
-.badge-alumni { background: rgba(255,255,255,0.06); color: var(--fg-muted); }
 
 /* ── Videos ── */
 .videos { background: var(--bg); }
@@ -760,8 +793,9 @@ img { display: block; max-width: 100%; }
   .tl-item:hover .tl-card { transform: none; }
 
   /* Crew */
-  .crew-grid { grid-template-columns: repeat(2, 1fr); }
-  .crew-legend { gap: 1rem; }
+  .crew-grid-active { grid-template-columns: 1fr; }
+  .crew-grid-alumni { grid-template-columns: 1fr; }
+  .crew-card-alumni { flex-direction: row; }
 
   /* Join section */
   .join-inner { gap: 1.5rem; }
