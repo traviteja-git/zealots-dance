@@ -401,6 +401,82 @@ img { display: block; max-width: 100%; }
 }
 .social-card:hover .social-arrow { transform: translateX(4px); color: var(--fg); }
 
+/* ── Join the Crew ── */
+.join {
+  background: #f5f5f5;
+  color: #111;
+}
+.join-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.join-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.join-logo-img {
+  width: min(400px, 100%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.12));
+}
+.join .section-tag { display: none; } /* overridden by tag-dark */
+.tag-dark {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #cc1f1f;
+  margin-bottom: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(200,30,30,0.3);
+  border-radius: 2px;
+}
+.join-title { color: #111; }
+.join-sub { color: #555; }
+.join-actions {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+.btn-join-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+}
+.btn-join-primary:hover { background: #333; transform: translateY(-1px); }
+.btn-join-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1.5px solid #aaa;
+  color: #333;
+  background: transparent;
+}
+.btn-join-outline:hover { border-color: #111; color: #111; background: rgba(0,0,0,0.04); }
+
 /* ── Footer ── */
 .footer {
   padding: 1.75rem 1.25rem;
@@ -445,6 +521,10 @@ img { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-visual { display: none; }
+  .join-inner { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .join-logo-wrap { order: -1; }
+  .join-logo-img { width: min(320px, 70vw); }
+  .join-actions { justify-content: center; }
 }
 
 /* ── Mobile (≤640px) ── */
@@ -479,6 +559,12 @@ img { display: block; max-width: 100%; }
   .stat:not(:last-child) { border-right: 1px solid var(--border); }
   .stat-num { font-size: 2.2rem; }
   .stat-unit { font-size: 1.4rem; }
+
+  /* Join section */
+  .join-inner { gap: 1.5rem; }
+  .join-logo-img { width: min(260px, 80vw); }
+  .join-actions { flex-direction: column; }
+  .btn-join-primary, .btn-join-outline { width: 100%; }
 
   /* Social cards: full width, compact */
   .social-grid { grid-template-columns: 1fr; }
