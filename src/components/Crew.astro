@@ -1,0 +1,48 @@
+---
+import { activeMembers, alumniMembers } from '../data/crew';
+---
+<section class="section crew" id="crew">
+  <div class="container">
+    <div class="section-tag">The Crew</div>
+    <h2 class="section-title">The leaders<br />behind the moves.</h2>
+    <p class="section-sub">The people who built, shaped, and continue to drive Zealots Dance — from a single office to 120+ collaborators across organisations.</p>
+
+    <div class="crew-group-label">
+      <span class="crew-group-dot active"></span>
+      Currently Leading
+    </div>
+    <div class="crew-grid crew-grid-active">
+      {activeMembers.map((member) => (
+        <div class="crew-card crew-card-active">
+          {member.photo
+            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
+            : <div class="crew-avatar active-avatar">{member.initial}</div>
+          }
+          <div class="crew-info">
+            <span class="crew-name">{member.name}</span>
+            <span class="crew-tenure active-tenure">{member.tenure}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="crew-group-label crew-group-label-alumni">
+      <span class="crew-group-dot alumni"></span>
+      Alumni — Those who built the foundation
+    </div>
+    <div class="crew-grid crew-grid-alumni">
+      {alumniMembers.map((member) => (
+        <div class="crew-card crew-card-alumni">
+          {member.photo
+            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
+            : <div class="crew-avatar alumni-avatar">{member.initial}</div>
+          }
+          <div class="crew-info">
+            <span class="crew-name crew-name-alumni">{member.name}</span>
+            <span class="crew-tenure alumni-tenure">{member.tenure}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

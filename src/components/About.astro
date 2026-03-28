@@ -1,0 +1,72 @@
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-tag">Who We Are</div>
+    <h2 class="section-title">9 to 5 by day.<br />Dance floor by night.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Zealots Dance Crew is a collective of corporate professionals who refused to leave their passion for dance at the office door. We are suits and spreadsheets by day — and pure energy on the floor by night.
+        </p>
+        <p>
+          We built this crew to show that dance isn't just for the young or the trained — it belongs to everyone who feels it. By corporate folks, for corporate folks.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="2018">0</span>
+            <span class="stat-label">Founded</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="6">0</span><span class="stat-unit">+</span>
+            <span class="stat-label">Years Strong</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="120">0</span><span class="stat-unit">+</span>
+            <span class="stat-label">Collaborators</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card card-1">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" fill="#ff3c3c" fill-opacity="0.08"/>
+            <text x="100" y="120" text-anchor="middle" font-size="80" fill="#ff3c3c" opacity="0.7">🕺</text>
+          </svg>
+        </div>
+        <div class="about-card card-2">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" fill="#ff3c3c" fill-opacity="0.08"/>
+            <text x="100" y="120" text-anchor="middle" font-size="80" fill="#ff3c3c" opacity="0.7">💃</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.dataset.target ?? '0', 10);
+    const duration = 1400;
+    const start = performance.now();
+    function step(now: number) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = String(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = String(target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        (e.target as HTMLElement).querySelectorAll<HTMLElement>('.stat-num').forEach(animateCounter);
+        statsObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const statsSection = document.querySelector('.about-stats');
+  if (statsSection) statsObserver.observe(statsSection);
+</script>

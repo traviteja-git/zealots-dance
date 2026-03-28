@@ -1,0 +1,18 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Welcome to</p>
+    <div class="hero-logo-wrap">
+      <img src={`${base}logo.png`} alt="Zealots Dance Crew" class="hero-logo-img" />
+    </div>
+    <p class="hero-sub">By corporate folks, for corporate folks</p>
+    <div class="hero-cta">
+      <a href="#videos" class="btn btn-primary">Watch Us Move</a>
+      <a href="https://www.instagram.com/zealots_dance" target="_blank" rel="noopener" class="btn btn-outline">Follow on Instagram</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>

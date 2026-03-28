@@ -821,3 +821,11 @@ img { display: block; max-width: 100%; }
   .stat-num { font-size: 1.8rem; }
   .stat-label { font-size: 0.65rem; }
 }
+
+/* ── Crew Avatar Photos ── */
+.crew-avatar-photo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.crew-card-active .crew-avatar-photo { width: 88px; height: 88px; }
+.crew-card-alumni .crew-avatar-photo { width: 44px; height: 44px; }

@@ -1,0 +1,25 @@
+---
+import { timeline } from '../data/timeline';
+---
+<section class="section story" id="story">
+  <div class="container">
+    <div class="section-tag">Our Story</div>
+    <h2 class="section-title">How it all began.</h2>
+    <p class="section-sub">A journey that started with a shared passion inside four walls — and grew beyond every boundary.</p>
+    <div class="timeline">
+      {timeline.map((event) => (
+        <div class:list={['tl-item', { 'tl-now': event.isNow, 'tl-pivot': event.badgeType === 'red' }]}>
+          <div class="tl-marker">
+            <span class="tl-year">{event.year}</span>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <span class:list={['tl-badge', { 'tl-badge-red': event.badgeType === 'red', 'tl-badge-green': event.badgeType === 'green' }]}>{event.badge}</span>
+            <h3 class="tl-title">{event.title}</h3>
+            <p class="tl-body" set:html={event.body} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
