@@ -542,6 +542,12 @@ img { display: block; max-width: 100%; }
 
 /* ── Videos ── */
 .videos { background: var(--bg); }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
 .video-embed {
   position: relative;
   width: 100%;
@@ -556,7 +562,64 @@ img { display: block; max-width: 100%; }
   inset: 0;
   width: 100%; height: 100%;
 }
-.video-cta { margin-top: 1.75rem; text-align: center; }
+.video-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+.video-placeholder {
+  aspect-ratio: 16/9;
+  background: var(--bg-3);
+  border: 1px dashed rgba(255,255,255,0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--fg-muted);
+}
+.video-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
+.video-placeholder span { font-size: 0.85rem; font-weight: 600; }
+.video-placeholder p { font-size: 0.72rem; opacity: 0.6; }
+.video-cta { text-align: center; }
+
+/* ── Book Us ── */
+.book { background: var(--bg-2); }
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.book-card {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.book-card:hover { border-color: rgba(255,60,60,0.35); transform: translateY(-3px); }
+.book-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.book-card h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.book-card p { font-size: 0.85rem; color: var(--fg-muted); line-height: 1.6; }
+.book-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #25d366;
+  color: #fff;
+  transition: all 0.2s;
+}
+.btn-whatsapp:hover { background: #1aad52; transform: translateY(-1px); }
 
 /* ── Connect ── */
 .connect { background: var(--bg-2); }

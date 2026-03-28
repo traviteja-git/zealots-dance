@@ -6,10 +6,12 @@ interface Props {
   description?: string;
 }
 
+const base = import.meta.env.BASE_URL;
 const {
   title = 'Zealots Dance Crew',
-  description = "Zealots Dance Crew — by corporate folks, for corporate folks. A dance crew that proves the office isn't where the story ends."
+  description = "Zealots Dance Crew — where the dance floor meets the 9-to-5. A crew of corporate professionals who live for movement."
 } = Astro.props;
+const ogImage = `${base}/logo.png`;
 ---
 
 <!DOCTYPE html>
@@ -19,9 +21,23 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href={`${base}/logo.png`} />
+
+  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content={`https://traviteja-git.github.io${base}/logo.png`} />
+  <meta property="og:url" content="https://traviteja-git.github.io/zealots-dance/" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`https://traviteja-git.github.io${base}/logo.png`} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -29,7 +45,6 @@ const {
 <body>
   <slot />
   <script>
-    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -37,10 +52,10 @@ const {
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll(
-      '.section-tag, .tag-dark, .section-title, .section-sub, .about-text, .about-visual, .video-embed, .video-cta, .social-card, .about-stats, .join-logo-wrap, .join-content, .tl-item, .crew-card'
+      '.section-tag, .tag-dark, .section-title, .section-sub, .about-text, .about-visual, .video-grid, .video-cta, .social-card, .join-logo-wrap, .join-content, .tl-item, .crew-card, .book-card'
     ).forEach(el => {
       el.classList.add('reveal');
       observer.observe(el);
