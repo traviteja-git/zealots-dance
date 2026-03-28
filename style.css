@@ -424,10 +424,30 @@ img { display: block; max-width: 100%; }
 
 /* ── Crew ── */
 .crew { background: var(--bg); }
+
+.crew-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.legend-dot.active { background: #4ade80; }
+.legend-dot.alumni { background: var(--fg-muted); }
+
 .crew-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 .crew-card {
   display: flex;
@@ -435,39 +455,57 @@ img { display: block; max-width: 100%; }
   align-items: center;
   text-align: center;
   gap: 0.875rem;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1.25rem 1.5rem;
   background: var(--bg-3);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  transition: border-color 0.2s, transform 0.2s;
+  border-radius: 12px;
+  transition: border-color 0.25s, transform 0.25s;
 }
-.crew-card:hover { border-color: rgba(255,60,60,0.35); transform: translateY(-4px); }
+.crew-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+.crew-card-active { border-color: rgba(74,222,128,0.2); }
+.crew-card-active:hover { border-color: rgba(74,222,128,0.45); box-shadow: 0 8px 32px rgba(74,222,128,0.08); }
 
 .crew-avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--red) 0%, #7c1a1a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #fff;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
-.crew-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.active-avatar { background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); }
+.alumni-avatar { background: linear-gradient(135deg, #555 0%, #333 100%); }
+
+.crew-info { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
 .crew-name {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--fg);
 }
-.crew-role {
-  font-size: 0.75rem;
-  color: var(--fg-muted);
+.crew-tenure {
+  font-size: 0.78rem;
   letter-spacing: 0.5px;
 }
+.active-tenure { color: #4ade80; }
+.alumni-tenure { color: var(--fg-muted); }
+
+.crew-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-top: 0.1rem;
+}
+.badge-active { background: rgba(74,222,128,0.12); color: #4ade80; }
+.badge-alumni { background: rgba(255,255,255,0.06); color: var(--fg-muted); }
 
 /* ── Videos ── */
 .videos { background: var(--bg); }
@@ -669,7 +707,7 @@ img { display: block; max-width: 100%; }
   .join-logo-wrap { order: -1; }
   .join-logo-img { width: min(320px, 70vw); }
   .join-actions { justify-content: center; }
-  .crew-grid { grid-template-columns: repeat(3, 1fr); }
+  .crew-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Small tablet (≤700px) ── */
@@ -723,6 +761,7 @@ img { display: block; max-width: 100%; }
 
   /* Crew */
   .crew-grid { grid-template-columns: repeat(2, 1fr); }
+  .crew-legend { gap: 1rem; }
 
   /* Join section */
   .join-inner { gap: 1.5rem; }
