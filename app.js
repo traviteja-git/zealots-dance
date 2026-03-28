@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(
-  '.section-tag, .tag-dark, .section-title, .section-sub, .about-text, .about-visual, .video-embed, .video-cta, .social-card, .about-stats, .join-logo-wrap, .join-content'
+  '.section-tag, .tag-dark, .section-title, .section-sub, .about-text, .about-visual, .video-embed, .video-cta, .social-card, .about-stats, .join-logo-wrap, .join-content, .tl-item, .crew-card'
 ).forEach(el => {
   el.classList.add('reveal');
   observer.observe(el);
