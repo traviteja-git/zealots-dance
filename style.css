@@ -480,8 +480,8 @@ img { display: block; max-width: 100%; }
 /* ── Footer ── */
 .footer {
   padding: 1.75rem 1.25rem;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  border-top: 1px solid #e4e4e4;
+  background: #fff;
 }
 .footer-inner {
   max-width: var(--max-w);
@@ -493,12 +493,11 @@ img { display: block; max-width: 100%; }
   gap: 0.75rem;
 }
 .footer-logo-img {
-  height: 36px;
+  height: 40px;
   width: auto;
   object-fit: contain;
-  opacity: 0.7;
 }
-.footer-copy { font-size: 0.78rem; color: var(--fg-muted); }
+.footer-copy { font-size: 0.78rem; color: #888; }
 
 /* ── Animations ── */
 @keyframes fadeUp {
