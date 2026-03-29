@@ -15,7 +15,7 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
             <div class={`vc-slide${i === 0 ? ' active' : ''}`}>
               <div class="video-embed">
                 <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
+                  src={`https://www.youtube.com/embed/${video.id}?enablejsapi=1`}
                   title={video.title}
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -71,7 +71,13 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
   const next   = document.querySelector<HTMLButtonElement>('.vc-next');
   let cur = 0;
 
+  function pauseCurrent() {
+    const iframe = slides[cur].querySelector<HTMLIFrameElement>('iframe');
+    iframe?.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+  }
+
   function goTo(n: number) {
+    pauseCurrent();
     slides[cur].classList.remove('active');
     dots[cur].classList.remove('active');
     cur = (n + slides.length) % slides.length;
