@@ -615,7 +615,7 @@ img { display: block; max-width: 100%; }
 .videos { background: var(--bg); }
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   margin-bottom: 1.75rem;
 }
@@ -1069,7 +1069,7 @@ img { display: block; max-width: 100%; }
   .social-card { padding: 1rem 1.25rem; }
 
   /* Video grid */
-  .video-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
   .video-placeholder-grid { grid-template-columns: 1fr; }
 
   /* Instagram */
