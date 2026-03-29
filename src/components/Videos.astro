@@ -9,19 +9,39 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
     <p class="section-sub">Performances, battles, and behind-the-scenes — straight from the floor.</p>
 
     {hasRealIds ? (
-      <div class="video-grid">
-        {featuredVideos.map((video) => (
-          <div class="video-embed">
-            <iframe
-              src={`https://www.youtube.com/embed/${video.id}`}
-              title={video.title}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+      <div class="video-carousel-wrap">
+        <button class="vc-arrow vc-prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="vc-track-outer">
+          <div class="vc-track">
+            {featuredVideos.map((video, i) => (
+              <div class="vc-slide" data-index={i}>
+                <div class="video-thumb" data-id={video.id}>
+                  <img
+                    src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                    alt={video.title}
+                    loading="lazy"
+                  />
+                  <button class="play-btn" aria-label={`Play ${video.title}`}>
+                    <svg viewBox="0 0 68 48" width="52" height="36">
+                      <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(0,0,0,0.75)"/>
+                      <path d="M45 24 27 14v20z" fill="#fff"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <button class="vc-arrow vc-next" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
+
+      <div class="vc-dots"></div>
     ) : (
       <div class="video-placeholder-grid">
         <div class="video-placeholder">
@@ -50,3 +70,88 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
     </div>
   </div>
 </section>
+
+<script>
+  // Click-to-load iframe
+  document.querySelectorAll<HTMLElement>('.video-thumb').forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const id = thumb.dataset.id;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+      thumb.innerHTML = '';
+      thumb.appendChild(iframe);
+      thumb.classList.add('playing');
+    });
+  });
+
+  // Carousel
+  const track = document.querySelector<HTMLElement>('.vc-track');
+  const dotsWrap = document.querySelector<HTMLElement>('.vc-dots');
+  const prevBtn = document.querySelector<HTMLButtonElement>('.vc-prev');
+  const nextBtn = document.querySelector<HTMLButtonElement>('.vc-next');
+  const slides = document.querySelectorAll<HTMLElement>('.vc-slide');
+
+  if (track && dotsWrap && slides.length) {
+    let current = 0;
+
+    function perView() {
+      return window.innerWidth >= 900 ? 3 : window.innerWidth >= 600 ? 2 : 1;
+    }
+
+    function totalPages() {
+      return Math.ceil(slides.length / perView());
+    }
+
+    // Build dots
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < totalPages(); i++) {
+        const d = document.createElement('button');
+        d.className = 'vc-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', `Go to page ${i + 1}`);
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function goTo(page: number) {
+      const pages = totalPages();
+      current = Math.max(0, Math.min(page, pages - 1));
+      const pv = perView();
+      const slideWidth = 100 / pv;
+      track.style.transform = `translateX(-${current * pv * slideWidth}%)`;
+      dotsWrap.querySelectorAll('.vc-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current >= pages - 1;
+    }
+
+    function init() {
+      const pv = perView();
+      slides.forEach(s => {
+        (s as HTMLElement).style.flex = `0 0 ${100 / pv}%`;
+        (s as HTMLElement).style.maxWidth = `${100 / pv}%`;
+      });
+      buildDots();
+      goTo(0);
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+
+    // Touch swipe
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+    });
+
+    init();
+    window.addEventListener('resize', init);
+  }
+</script>
