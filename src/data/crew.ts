@@ -6,13 +6,13 @@ export interface CrewMember {
 }
 
 export const activeMembers: CrewMember[] = [
-  { name: 'Raviteja', initial: 'R', tenure: '2018 – Present' },
-  { name: 'Ayushi Dash', initial: 'A', tenure: '2019 – Present' },
-  { name: 'Shreekaar Padma', initial: 'S', tenure: '2022 – Present' },
+  { name: 'Raviteja Tholupunoori', initial: 'RT', tenure: '2018 – Present' },
+  { name: 'Ayushi Dash', initial: 'AD', tenure: '2020 – Present' },
+  { name: 'Shreekaar Padma', initial: 'SP', tenure: '2023 – Present' },
 ];
 
 export const alumniMembers: CrewMember[] = [
-  { name: 'Sagun Somani', initial: 'S', tenure: '2018 – 2019' },
-  { name: 'Raghav', initial: 'R', tenure: '2019 – 2024' },
-  { name: 'Sowjanya', initial: 'S', tenure: '2018 – 2019' },
+  { name: 'Sagun Somani', initial: 'SS', tenure: '2018 – 2019' },
+  { name: 'Raghavan Srinivasan', initial: 'RS', tenure: '2019 – 2024' },
+  { name: 'Sowjanya Chilveru', initial: 'SC', tenure: '2018 – 2019' },
 ];
