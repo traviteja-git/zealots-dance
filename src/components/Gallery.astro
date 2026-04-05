@@ -18,7 +18,7 @@ const photos = galleryPhotos;
     <div class="gallery-grid">
       {photos.map((photo, i) => (
         <div class="gallery-item" data-cat={photo.category} data-index={i}>
-          <img src={photo.src} alt="" loading="lazy" />
+          <img src={photo.src} alt={photo.alt} loading="lazy" />
         </div>
       ))}
     </div>
