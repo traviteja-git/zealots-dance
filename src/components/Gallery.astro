@@ -1,7 +1,6 @@
 ---
 import { galleryPhotos, categories } from '../data/gallery';
-import { base } from 'astro:config/client';
-const photos = galleryPhotos.map((p) => ({ ...p, src: `${base}${p.src}` }));
+const photos = galleryPhotos;
 ---
 <section class="section gallery" id="gallery">
   <div class="container">
