@@ -1,0 +1,29 @@
+---
+const photos = [
+  { src: '/Zealots/Corporate Events/zealots_corporate_04.jpg', alt: 'Zealots Dance Crew stage performance at corporate gala Hyderabad' },
+  { src: '/Zealots/Corporate Events/zealots_corporate_22.jpg', alt: 'Zealots Dance Crew group shot at corporate show Hyderabad' },
+  { src: '/Zealots/Sangeeth/zealots_sangeeth_01.jpg', alt: 'Zealots Dance Crew sangeet performance at Hyderabad wedding' },
+  { src: '/Zealots/Sangeeth/zealots_sangeeth_05.jpg', alt: 'Zealots Dance Crew sangeet night performance Hyderabad wedding' },
+  { src: '/Zealots/Workshops/zealots_workshops_01.jpg', alt: 'Zealots Dance Crew workshop session Hyderabad' },
+  { src: '/Zealots/Outings/zealots_outing_01.jpg', alt: 'Zealots Dance Crew team outing group photo' },
+];
+---
+<section class="section featured-gallery">
+  <div class="container">
+    <div class="section-tag">Gallery</div>
+    <h2 class="section-title">Moments from<br />the floor.</h2>
+    <p class="section-sub">Performances, sangeet nights, workshops, and off-stage moments — a glimpse into the world of Zealots.</p>
+
+    <div class="featured-gallery-grid">
+      {photos.map((photo) => (
+        <a href="/gallery" class="featured-gallery-item">
+          <img src={photo.src} alt={photo.alt} loading="lazy" />
+        </a>
+      ))}
+    </div>
+
+    <div class="featured-gallery-cta">
+      <a href="/gallery" class="btn btn-outline">View Full Gallery</a>
+    </div>
+  </div>
+</section>

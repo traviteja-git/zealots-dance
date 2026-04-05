@@ -30,7 +30,7 @@ const jsonLd = {
       areaServed: 'Hyderabad, India',
       sameAs: [
         'https://www.instagram.com/zealots_dance/',
-        'https://www.youtube.com/@zealotsdance'
+        'https://www.youtube.com/@ZealotsDanceCrew'
       ],
       contactPoint: {
         '@type': 'ContactPoint',
@@ -103,7 +103,7 @@ const jsonLd = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={SITE} />
+  <link rel="canonical" href={new URL(Astro.url.pathname, SITE).href} />
 
   <!-- Indexing -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

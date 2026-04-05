@@ -1,4 +1,4 @@
-export type GalleryCategory = 'corporate' | 'sangeeth' | 'workshops';
+export type GalleryCategory = 'corporate' | 'sangeeth' | 'workshops' | 'outings';
 
 export interface GalleryPhoto {
   src: string;
@@ -29,8 +29,10 @@ export const galleryPhotos: GalleryPhoto[] = [
 
   // Sangeeth
   { src: '/Zealots/Sangeeth/zealots_sangeeth_01.jpg', category: 'sangeeth', alt: 'Zealots Dance Crew sangeet performance at Hyderabad wedding' },
-  { src: '/Zealots/Sangeeth/zealots_sangeeth_02.jpg', category: 'sangeeth', alt: 'Zealots sangeet dance group performing at Hyderabad wedding ceremony' },
   { src: '/Zealots/Sangeeth/zealots_sangeeth_03.jpg', category: 'sangeeth', alt: 'Sangeet night dance performance by Zealots Dance Crew Hyderabad' },
+  { src: '/Zealots/Sangeeth/zealots_sangeeth_04.jpg', category: 'sangeeth', alt: 'Zealots Dance Crew sangeet group performance at wedding ceremony' },
+  { src: '/Zealots/Sangeeth/zealots_sangeeth_05.jpg', category: 'sangeeth', alt: 'Zealots Dance Crew sangeet night performance Hyderabad wedding' },
+  { src: '/Zealots/Sangeeth/zealots_sangeeth_06.jpg', category: 'sangeeth', alt: 'Zealots Dance Crew sangeet dance Hyderabad wedding celebration' },
 
   // Workshops
   { src: '/Zealots/Workshops/zealots_workshops_01.jpg', category: 'workshops', alt: 'Zealots Dance Crew workshop session Hyderabad 2023' },
@@ -46,9 +48,36 @@ export const galleryPhotos: GalleryPhoto[] = [
   { src: '/Zealots/Workshops/zealots_workshops_11.jpg', category: 'workshops', alt: 'Zealots Dance Crew workshop performance photo Hyderabad' },
 ];
 
+// Outings
+export const outingPhotos: GalleryPhoto[] = [
+  { src: '/Zealots/Outings/zealots_outing_01.jpg', category: 'outings', alt: 'Zealots Dance Crew team outing group photo' },
+  { src: '/Zealots/Outings/zealots_outing_02.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing hangout' },
+  { src: '/Zealots/Outings/zealots_outing_03.jpg', category: 'outings', alt: 'Zealots Dance Crew team bonding outing' },
+  { src: '/Zealots/Outings/zealots_outing_04.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing together' },
+  { src: '/Zealots/Outings/zealots_outing_05.jpg', category: 'outings', alt: 'Zealots Dance Crew group outing Hyderabad' },
+  { src: '/Zealots/Outings/zealots_outing_06.jpg', category: 'outings', alt: 'Zealots Dance Crew team outing fun' },
+  { src: '/Zealots/Outings/zealots_outing_07.jpg', category: 'outings', alt: 'Zealots Dance Crew outing hangout photo' },
+  { src: '/Zealots/Outings/zealots_outing_08.jpg', category: 'outings', alt: 'Zealots Dance Crew crew gathering outing' },
+  { src: '/Zealots/Outings/zealots_outing_09.jpg', category: 'outings', alt: 'Zealots Dance Crew team day out Hyderabad' },
+  { src: '/Zealots/Outings/zealots_outing_10.jpg', category: 'outings', alt: 'Zealots Dance Crew outing group moment' },
+  { src: '/Zealots/Outings/zealots_outing_11.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing snapshot' },
+  { src: '/Zealots/Outings/zealots_outing_12.jpg', category: 'outings', alt: 'Zealots Dance Crew team outing activity' },
+  { src: '/Zealots/Outings/zealots_outing_13.jpg', category: 'outings', alt: 'Zealots Dance Crew group outing memory' },
+  { src: '/Zealots/Outings/zealots_outing_14.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing together Hyderabad' },
+  { src: '/Zealots/Outings/zealots_outing_15.jpg', category: 'outings', alt: 'Zealots Dance Crew early days crew outing 2019' },
+  { src: '/Zealots/Outings/zealots_outing_16.jpg', category: 'outings', alt: 'Zealots Dance Crew team hangout 2019' },
+  { src: '/Zealots/Outings/zealots_outing_17.jpg', category: 'outings', alt: 'Zealots Dance Crew group outing 2019' },
+  { src: '/Zealots/Outings/zealots_outing_18.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing 2020' },
+  { src: '/Zealots/Outings/zealots_outing_19.jpg', category: 'outings', alt: 'Zealots Dance Crew team bonding outing 2020' },
+  { src: '/Zealots/Outings/zealots_outing_20.jpg', category: 'outings', alt: 'Zealots Dance Crew crew outing group shot' },
+  { src: '/Zealots/Outings/zealots_outing_21.jpg', category: 'outings', alt: 'Zealots Dance Crew team outing fun moment' },
+  { src: '/Zealots/Outings/zealots_outing_22.jpg', category: 'outings', alt: 'Zealots Dance Crew outing crew photo' },
+];
+
 export const categories = [
   { id: 'all', label: 'All' },
   { id: 'corporate', label: 'Corporate Events' },
   { id: 'sangeeth', label: 'Sangeeth' },
   { id: 'workshops', label: 'Workshops' },
+  { id: 'outings', label: 'Crew Outings' },
 ] as const;

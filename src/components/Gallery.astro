@@ -1,6 +1,6 @@
 ---
-import { galleryPhotos, categories } from '../data/gallery';
-const photos = galleryPhotos;
+import { galleryPhotos, outingPhotos, categories } from '../data/gallery';
+const photos = [...galleryPhotos, ...outingPhotos];
 ---
 <section class="section gallery" id="gallery">
   <div class="container">

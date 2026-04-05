@@ -1,48 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://zealotsdance.com/</loc>
     <lastmod>2026-04-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Gallery — all photos live here -->
+  <url>
+    <loc>https://zealotsdance.com/gallery/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
 
     <!-- Corporate Events -->
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_04.jpg</image:loc><image:title>Zealots Dance Crew stage performance Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_05.jpg</image:loc><image:title>Zealots corporate dance group Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_06.jpg</image:loc><image:title>Zealots Dance Crew event performance</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_07.jpg</image:loc><image:title>Corporate dance crew Hyderabad performance</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_08.jpeg</image:loc><image:title>Zealots Dance Crew corporate show Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_10.jpeg</image:loc><image:title>Zealots dance group corporate event</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_11.jpeg</image:loc><image:title>Zealots Dance Crew group photo corporate</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_12_1.jpeg</image:loc><image:title>Zealots Dance Crew family day performance</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_13.jpeg</image:loc><image:title>Zealots Dance Crew family day event Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_15.png</image:loc><image:title>Zealots Dance Crew corporate event Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_17.jpg</image:loc><image:title>Zealots Dance Crew corporate performance</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_18.jpg</image:loc><image:title>Zealots dance crew event photo</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_19.jpg</image:loc><image:title>Zealots Dance Crew MD family day</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_22.jpg</image:loc><image:title>Zealots Dance Crew corporate show photo</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_23.jpg</image:loc><image:title>Zealots Dance Crew Deloitte corporate event Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_24.jpeg</image:loc><image:title>Zealots Dance Crew performance photo Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_26.jpeg</image:loc><image:title>Zealots Dance Crew outing photo</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_27.jpg</image:loc><image:title>Zealots Dance Crew full group photo Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_04.jpg</image:loc><image:title>Zealots Dance Crew stage performance at corporate gala Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_05.jpg</image:loc><image:title>Corporate dance group Hyderabad performing on stage</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_06.jpg</image:loc><image:title>Zealots Dance Crew corporate event performance Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_07.jpg</image:loc><image:title>Corporate dance crew Hyderabad live show</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_08.jpeg</image:loc><image:title>Zealots Dance Crew performing at corporate show Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_10.jpeg</image:loc><image:title>Zealots dance group corporate event Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_11.jpeg</image:loc><image:title>Zealots Dance Crew performing at Hyderabad corporate event</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_12_1.jpeg</image:loc><image:title>Zealots Dance Crew family day performance Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_13.jpeg</image:loc><image:title>Zealots Dance Crew family day corporate celebration Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_15.png</image:loc><image:title>Zealots Dance Crew corporate event promotional photo Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_17.jpg</image:loc><image:title>Zealots Dance Crew performing at a corporate event Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_18.jpg</image:loc><image:title>Zealots Dance Crew corporate dance performance photo</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_19.jpg</image:loc><image:title>Zealots Dance Crew MD family day celebration Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_22.jpg</image:loc><image:title>Zealots Dance Crew group shot at corporate show Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_23.jpg</image:loc><image:title>Zealots Dance Crew Deloitte corporate event group photo Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_24.jpeg</image:loc><image:title>Zealots Dance Crew live performance photo Hyderabad corporate</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_26.jpeg</image:loc><image:title>Zealots Dance Crew corporate outing group photo Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Corporate%20Events/zealots_corporate_27.jpg</image:loc><image:title>Zealots Dance Crew full group photo at Hyderabad corporate event</image:title></image:image>
 
     <!-- Sangeeth -->
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_01.jpg</image:loc><image:title>Zealots Dance Crew sangeet performance Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_02.jpg</image:loc><image:title>Zealots sangeet dance group Hyderabad wedding</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_03.jpg</image:loc><image:title>Sangeet dance crew Hyderabad performance</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_01.jpg</image:loc><image:title>Zealots Dance Crew sangeet performance at Hyderabad wedding</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_03.jpg</image:loc><image:title>Sangeet night dance performance by Zealots Dance Crew Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_04.jpg</image:loc><image:title>Zealots Dance Crew sangeet group performance at wedding ceremony</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_05.jpg</image:loc><image:title>Zealots Dance Crew sangeet night performance Hyderabad wedding</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Sangeeth/zealots_sangeeth_06.jpg</image:loc><image:title>Zealots Dance Crew sangeet dance Hyderabad wedding celebration</image:title></image:image>
 
     <!-- Workshops -->
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_01.jpg</image:loc><image:title>Zealots Dance Crew workshop Hyderabad 2023</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_02.jpg</image:loc><image:title>Zealots dance workshop session Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_03.jpg</image:loc><image:title>Dance workshop Hyderabad by Zealots crew</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_04.jpeg</image:loc><image:title>Zealots Dance Crew workshop participants</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_01.jpg</image:loc><image:title>Zealots Dance Crew workshop session Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_02.jpg</image:loc><image:title>Zealots dance workshop class in Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_03.jpg</image:loc><image:title>Dance workshop by Zealots Dance Crew Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_04.jpeg</image:loc><image:title>Zealots Dance Crew workshop attendees Hyderabad</image:title></image:image>
     <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_05.jpeg</image:loc><image:title>Zealots dance training workshop Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_06.jpg</image:loc><image:title>Zealots Dance Crew workshop group photo</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_07.jpg</image:loc><image:title>Zealots workshop dance class Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_08.jpg</image:loc><image:title>Zealots Dance Crew practice session Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_09.jpg</image:loc><image:title>Zealots Dance Crew workshop photo</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_10.jpg</image:loc><image:title>Zealots dance workshop Hyderabad</image:title></image:image>
-    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_11.jpg</image:loc><image:title>Zealots Dance Crew workshop event photo</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_06.jpg</image:loc><image:title>Zealots Dance Crew workshop group photo Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_07.jpg</image:loc><image:title>Dance workshop class by Zealots Dance Crew Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_08.jpg</image:loc><image:title>Zealots Dance Crew practice session Hyderabad workshop</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_09.jpg</image:loc><image:title>Zealots Dance Crew workshop participants Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_10.jpg</image:loc><image:title>Zealots dance workshop event Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Workshops/zealots_workshops_11.jpg</image:loc><image:title>Zealots Dance Crew workshop performance photo Hyderabad</image:title></image:image>
+
+    <!-- Outings -->
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_01.jpg</image:loc><image:title>Zealots Dance Crew team outing group photo</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_02.jpg</image:loc><image:title>Zealots Dance Crew crew outing hangout</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_03.jpg</image:loc><image:title>Zealots Dance Crew team bonding outing</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_04.jpg</image:loc><image:title>Zealots Dance Crew crew outing together</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_05.jpg</image:loc><image:title>Zealots Dance Crew group outing Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_06.jpg</image:loc><image:title>Zealots Dance Crew team outing fun</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_07.jpg</image:loc><image:title>Zealots Dance Crew outing hangout photo</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_08.jpg</image:loc><image:title>Zealots Dance Crew crew gathering outing</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_09.jpg</image:loc><image:title>Zealots Dance Crew team day out Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_10.jpg</image:loc><image:title>Zealots Dance Crew outing group moment</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_11.jpg</image:loc><image:title>Zealots Dance Crew crew outing snapshot</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_12.jpg</image:loc><image:title>Zealots Dance Crew team outing activity</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_13.jpg</image:loc><image:title>Zealots Dance Crew group outing memory</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_14.jpg</image:loc><image:title>Zealots Dance Crew crew outing together Hyderabad</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_15.jpg</image:loc><image:title>Zealots Dance Crew early days crew outing 2019</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_16.jpg</image:loc><image:title>Zealots Dance Crew team hangout 2019</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_17.jpg</image:loc><image:title>Zealots Dance Crew group outing 2019</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_18.jpg</image:loc><image:title>Zealots Dance Crew crew outing 2020</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_19.jpg</image:loc><image:title>Zealots Dance Crew team bonding outing 2020</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_20.jpg</image:loc><image:title>Zealots Dance Crew crew outing group shot</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_21.jpg</image:loc><image:title>Zealots Dance Crew team outing fun moment</image:title></image:image>
+    <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_22.jpg</image:loc><image:title>Zealots Dance Crew outing crew photo</image:title></image:image>
   </url>
+
+  <!-- The Crew -->
+  <url>
+    <loc>https://zealotsdance.com/crew/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Book Us -->
+  <url>
+    <loc>https://zealotsdance.com/book/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
