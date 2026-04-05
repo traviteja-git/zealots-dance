@@ -1,0 +1,112 @@
+---
+import { galleryPhotos, categories } from '../data/gallery';
+import { base } from 'astro:config/client';
+const photos = galleryPhotos.map((p) => ({ ...p, src: `${base}${p.src}` }));
+---
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-tag">Gallery</div>
+    <h2 class="section-title">Moments from<br />the floor.</h2>
+
+    <div class="gallery-tabs">
+      {categories.map((cat) => (
+        <button class={`gallery-tab${cat.id === 'all' ? ' active' : ''}`} data-cat={cat.id}>
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <div class="gallery-grid">
+      {photos.map((photo, i) => (
+        <div class="gallery-item" data-cat={photo.category} data-index={i}>
+          <img src={photo.src} alt="" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+  <button class="lb-close" id="lb-close" aria-label="Close">&#x2715;</button>
+  <button class="lb-prev" id="lb-prev" aria-label="Previous">&#x2039;</button>
+  <button class="lb-next" id="lb-next" aria-label="Next">&#x203A;</button>
+  <img class="lb-img" id="lb-img" src="" alt="" />
+</div>
+
+<script define:vars={{ photos }}>
+  const tabs = document.querySelectorAll('.gallery-tab');
+  const items = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lbImg = document.getElementById('lb-img');
+
+  let visibleIndices = [];
+  let currentPos = 0;
+
+  function filter(cat) {
+    visibleIndices = [];
+    items.forEach((item) => {
+      const match = cat === 'all' || item.dataset.cat === cat;
+      item.style.display = match ? '' : 'none';
+      if (match) visibleIndices.push(Number(item.dataset.index));
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      filter(tab.dataset.cat);
+    });
+  });
+
+  filter('all');
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      const idx = Number(item.dataset.index);
+      currentPos = visibleIndices.indexOf(idx);
+      showLightbox(currentPos);
+    });
+  });
+
+  function showLightbox(pos) {
+    const idx = visibleIndices[pos];
+    lbImg.src = photos[idx].src;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => {
+    currentPos = (currentPos - 1 + visibleIndices.length) % visibleIndices.length;
+    showLightbox(currentPos);
+  });
+  document.getElementById('lb-next').addEventListener('click', () => {
+    currentPos = (currentPos + 1) % visibleIndices.length;
+    showLightbox(currentPos);
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') {
+      currentPos = (currentPos - 1 + visibleIndices.length) % visibleIndices.length;
+      showLightbox(currentPos);
+    }
+    if (e.key === 'ArrowRight') {
+      currentPos = (currentPos + 1) % visibleIndices.length;
+      showLightbox(currentPos);
+    }
+  });
+</script>
