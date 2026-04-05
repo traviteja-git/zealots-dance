@@ -6,12 +6,94 @@ interface Props {
   description?: string;
 }
 
-const base = import.meta.env.BASE_URL;
+const SITE = 'https://zealotsdance.com';
+
 const {
-  title = 'Zealots Dance Crew',
-  description = "Zealots Dance Crew — where the dance floor meets the 9-to-5. A crew of corporate professionals who live for movement."
+  title = 'Zealots Dance Crew | Corporate Dance Group Hyderabad',
+  description = 'Zealots Dance Crew — Hyderabad\'s premier corporate dance group. Specialising in corporate events, sangeet performances, workshops, and flash mobs since 2018. 120+ collaborators across organisations.'
 } = Astro.props;
-const ogImage = `${base}/logo.png`;
+
+const ogImage = `${SITE}/og-image.png`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['PerformingGroup', 'Organization'],
+      '@id': `${SITE}/#organization`,
+      name: 'Zealots Dance Crew',
+      url: SITE,
+      logo: `${SITE}/logo.png`,
+      image: ogImage,
+      description: 'Hyderabad\'s premier corporate dance group, founded in 2018. Performing at corporate events, sangeet ceremonies, workshops, and flash mobs.',
+      foundingDate: '2018',
+      areaServed: 'Hyderabad, India',
+      sameAs: [
+        'https://www.instagram.com/zealots_dance/',
+        'https://www.youtube.com/@zealotsdance'
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'Booking',
+        availableLanguage: ['English', 'Telugu', 'Hindi']
+      }
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${SITE}/#localbusiness`,
+      name: 'Zealots Dance Crew',
+      url: SITE,
+      image: ogImage,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hyderabad',
+        addressRegion: 'Telangana',
+        addressCountry: 'IN'
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 17.385044,
+        longitude: 78.486671
+      }
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: 'Zealots Dance Crew',
+      publisher: { '@id': `${SITE}/#organization` }
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What kind of events does Zealots Dance Crew perform at?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zealots Dance Crew performs at corporate events, family day celebrations, sangeet ceremonies, workshops, flash mobs, and private events across Hyderabad.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I book Zealots Dance Crew for my event?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can book Zealots Dance Crew directly through our website booking form or via WhatsApp. We respond within 24 hours.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Where is Zealots Dance Crew based?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zealots Dance Crew is based in Hyderabad, Telangana, India and has been active since 2018.'
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -21,22 +103,37 @@ const ogImage = `${base}/logo.png`;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={SITE} />
+
+  <!-- Indexing -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Geo -->
+  <meta name="geo.region" content="IN-TG" />
+  <meta name="geo.placename" content="Hyderabad" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href={`${base}/logo.png`} />
+  <link rel="icon" type="image/png" href="/logo.png" />
 
   <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zealots Dance Crew" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content={`https://traviteja-git.github.io${base}/og-image.png`} />
-  <meta property="og:url" content="https://traviteja-git.github.io/zealots-dance/" />
+  <meta property="og:url" content={SITE} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`https://traviteja-git.github.io${base}/og-image.png`} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
