@@ -1,5 +1,6 @@
 ---
 import { activeMembers, alumniMembers } from '../data/crew';
+import { base } from 'astro:config/client';
 ---
 <section class="section crew" id="crew">
   <div class="container">
@@ -15,7 +16,7 @@ import { activeMembers, alumniMembers } from '../data/crew';
       {activeMembers.map((member) => (
         <div class="crew-card crew-card-active">
           {member.photo
-            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
+            ? <img src={`${base}${member.photo}`} alt={member.name} class="crew-avatar crew-avatar-photo" />
             : <div class="crew-avatar active-avatar">{member.initial}</div>
           }
           <div class="crew-info">
@@ -39,7 +40,7 @@ import { activeMembers, alumniMembers } from '../data/crew';
       {alumniMembers.map((member) => (
         <div class="crew-card crew-card-alumni">
           {member.photo
-            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
+            ? <img src={`${base}${member.photo}`} alt={member.name} class="crew-avatar crew-avatar-photo" />
             : <div class="crew-avatar alumni-avatar">{member.initial}</div>
           }
           <div class="crew-info">
