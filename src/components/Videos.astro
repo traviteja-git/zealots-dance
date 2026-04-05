@@ -1,6 +1,12 @@
 ---
 import { featuredVideos } from '../data/videos';
-const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
+
+interface Props {
+  featured?: boolean;
+}
+const { featured = false } = Astro.props;
+const videos = featured ? featuredVideos.slice(0, 3) : featuredVideos;
+const hasRealIds = videos.some(v => !v.id.startsWith('YOUR_'));
 ---
 <section class="section videos" id="videos">
   <div class="container">
@@ -11,7 +17,7 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
     {hasRealIds ? (
       <div class="vc">
         <div class="vc-viewport">
-          {featuredVideos.map((video, i) => (
+          {videos.map((video, i) => (
             <div class={`vc-slide${i === 0 ? ' active' : ''}`}>
               <div class="video-embed">
                 <iframe
@@ -33,7 +39,7 @@ const hasRealIds = featuredVideos.some(v => !v.id.startsWith('YOUR_'));
           </button>
 
           <div class="vc-dots">
-            {featuredVideos.map((_, i) => (
+            {videos.map((_, i) => (
               <button class={`vc-dot${i === 0 ? ' active' : ''}`} data-dot={i} aria-label={`Video ${i + 1}`}></button>
             ))}
           </div>
