@@ -1,58 +1,55 @@
 ---
-import { activeMembers, alumniMembers } from '../data/crew';
+import { crewMembers, categoryOrder, categoryLabels, type CrewCategory } from '../data/crew';
+
+const groupedCrew = categoryOrder
+  .map(cat => ({ cat, members: crewMembers.filter(m => m.category === cat) }))
+  .filter(group => group.members.length > 0);
+
+const cardClass = (cat: CrewCategory) => {
+  if (cat === 'founder' || cat === 'choreographer') return 'crew-card-active';
+  if (cat === 'core') return 'crew-card-core';
+  return 'crew-card-alumni';
+};
+const gridClass = (cat: CrewCategory) => {
+  if (cat === 'founder' || cat === 'choreographer') return 'crew-grid-active';
+  if (cat === 'core') return 'crew-grid-core';
+  return 'crew-grid-alumni';
+};
+const avatarClass = (cat: CrewCategory) => {
+  if (cat === 'alumni') return 'alumni-avatar';
+  return 'active-avatar';
+};
+const tenureClass = (cat: CrewCategory) => cat === 'alumni' ? 'alumni-tenure' : 'active-tenure';
 ---
 <section class="section crew" id="crew">
   <div class="container">
-    <div class="section-tag">The Crew</div>
-    <h2 class="section-title">The leaders<br />behind the moves.</h2>
-    <p class="section-sub">The people who built, shaped, and continue to drive Zealots Dance — from a single office to 120+ collaborators across organisations.</p>
-
-    <div class="crew-group-label">
-      <span class="crew-group-dot active"></span>
-      Currently Leading
-    </div>
-    <div class="crew-grid crew-grid-active">
-      {activeMembers.map((member) => (
-        <div class="crew-card crew-card-active">
-          {member.photo
-            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
-            : <div class="crew-avatar active-avatar">{member.initial}</div>
-          }
-          <div class="crew-info">
-            <span class="crew-name">{member.name}</span>
-            <span class="crew-tenure active-tenure">{member.tenure}</span>
-            {member.instagram && (
-              <a class="crew-insta" href={`https://instagram.com/${member.instagram}`} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} on Instagram`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-            )}
-          </div>
+    {groupedCrew.map(({ cat, members }) => (
+      <div class:list={['crew-group', { 'crew-group-alumni': cat === 'alumni' }]}>
+        <div class="crew-group-label">
+          <span class:list={['crew-group-dot', cat]}></span>
+          {categoryLabels[cat]}
         </div>
-      ))}
-    </div>
-
-    <div class="crew-group-label crew-group-label-alumni">
-      <span class="crew-group-dot alumni"></span>
-      Alumni — Those who built the foundation
-    </div>
-    <div class="crew-grid crew-grid-alumni">
-      {alumniMembers.map((member) => (
-        <div class="crew-card crew-card-alumni">
-          {member.photo
-            ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
-            : <div class="crew-avatar alumni-avatar">{member.initial}</div>
-          }
-          <div class="crew-info">
-            <span class="crew-name crew-name-alumni">{member.name}</span>
-            <span class="crew-tenure alumni-tenure">{member.tenure}</span>
-            {member.instagram && (
-              <a class="crew-insta" href={`https://instagram.com/${member.instagram}`} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} on Instagram`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
-            )}
-          </div>
+        <div class:list={['crew-grid', gridClass(cat)]}>
+          {members.map((member) => (
+            <div class:list={['crew-card', cardClass(cat)]}>
+              {member.photo
+                ? <img src={member.photo} alt={member.name} class="crew-avatar crew-avatar-photo" />
+                : <div class:list={['crew-avatar', avatarClass(cat)]}>{member.initial}</div>
+              }
+              <div class="crew-info">
+                <span class="crew-name">{member.name}</span>
+                <span class="crew-role">{member.role}</span>
+                <span class:list={['crew-tenure', tenureClass(cat)]}>{member.tenure}</span>
+                {member.instagram && (
+                  <a class="crew-insta" href={`https://instagram.com/${member.instagram}`} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} on Instagram`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </section>
