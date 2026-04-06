@@ -96,6 +96,37 @@
   </div>
 </section>
 
+<section class="section book-faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title faq-title">Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do you perform outside Hyderabad?</summary>
+        <p>We're currently based in Hyderabad and perform within the city only. Outstation bookings are not available at this time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How far in advance should we book?</summary>
+        <p>We recommend reaching out at least 3–4 weeks before your event. For large corporate events or weddings, 6–8 weeks is ideal to allow enough rehearsal time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can we request specific songs or themes?</summary>
+        <p>Absolutely. We work with your brief to build a set that fits the mood and audience. Corporate events, Bollywood nights, regional themes — we've done it all.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do you need from us on the event day?</summary>
+        <p>A cleared stage area, access for a brief sound check, and a point of contact on-site. We handle costumes, choreography, and the performance — you just enjoy the show.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is a deposit required to confirm a booking?</summary>
+        <p>Yes. Once we agree on the details, we typically require a 30–50% advance to confirm the date. We'll walk you through this once you send an enquiry.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <script>
   // Event type cards pre-fill the dropdown and scroll to form
   const bookCards = document.querySelectorAll('.book-card[data-event]');
@@ -148,3 +179,74 @@
     }
   });
 </script>
+
+<style>
+  /* FAQ section */
+  .book-faq {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .faq-header {
+    margin-bottom: 2rem;
+  }
+
+  .faq-title {
+    font-size: 1.75rem;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    gap: 1rem;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.1rem;
+    color: var(--color-accent, #e63946);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    padding: 0.75rem 1.25rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.65;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .book-faq {
+      padding: 2.5rem 0;
+    }
+  }
+</style>

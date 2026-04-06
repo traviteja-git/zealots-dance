@@ -13,6 +13,7 @@ const isActive = (path: string) =>
       <li><a href="/about" class={`nav-link${isActive('/about') ? ' active' : ''}`}>About</a></li>
       <li><a href="/gallery" class={`nav-link${isActive('/gallery') ? ' active' : ''}`}>Gallery</a></li>
       <li><a href="/crew" class={`nav-link${isActive('/crew') ? ' active' : ''}`}>The Crew</a></li>
+      <li><a href="/join" class={`nav-link${isActive('/join') ? ' active' : ''}`}>Join</a></li>
       <li><a href="/book" class={`nav-link nav-link-cta${isActive('/book') ? ' active' : ''}`}>Book Us</a></li>
     </ul>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -24,6 +25,7 @@ const isActive = (path: string) =>
     <a href="/about" class="drawer-link">About</a>
     <a href="/gallery" class="drawer-link">Gallery</a>
     <a href="/crew" class="drawer-link">The Crew</a>
+    <a href="/join" class="drawer-link">Join</a>
     <a href="/book" class="drawer-link">Book Us</a>
   </div>
 </nav>
