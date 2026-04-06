@@ -514,8 +514,24 @@ img { display: block; max-width: 100%; }
 .tl-body strong { color: var(--fg); }
 .tl-body em { color: var(--red); font-style: normal; }
 
+/* ── Crew Hero ── */
+.crew-hero {
+  background: var(--bg-2);
+  padding: 7rem 1.25rem 3rem;
+}
+.crew-hero .container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.crew-hero-title { margin-bottom: 1rem; }
+.crew-hero-sub { max-width: 540px; }
+
 /* ── Crew ── */
 .crew { background: var(--bg); }
+
+.crew-group { margin-bottom: 3rem; }
+.crew-group:last-child { margin-bottom: 0; }
+.crew-group-alumni { margin-top: 1rem; }
 
 .crew-group-label {
   display: flex;
@@ -525,20 +541,18 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #4ade80;
-  margin-bottom: 1.25rem;
-}
-.crew-group-label-alumni {
   color: var(--fg-muted);
-  margin-top: 3rem;
+  margin-bottom: 1.25rem;
 }
 .crew-group-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
-.crew-group-dot.active { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
-.crew-group-dot.alumni { background: var(--fg-muted); }
+.crew-group-dot.founder      { background: var(--red); box-shadow: 0 0 8px var(--red); }
+.crew-group-dot.choreographer { background: #a78bfa; box-shadow: 0 0 8px #a78bfa; }
+.crew-group-dot.core         { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+.crew-group-dot.alumni       { background: #fbbf24; }
 
 /* Active grid — large cards */
 .crew-grid {
@@ -575,17 +589,46 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 12px 40px rgba(74,222,128,0.1);
 }
 
-/* Alumni cards — compact and muted */
+/* Core member grid — 4 columns to handle large lists */
+.crew-grid-core {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Core cards — compact row layout */
+.crew-card-core {
+  padding: 1rem 1.25rem;
+  gap: 0.75rem;
+  flex-direction: row;
+  text-align: left;
+  border-color: rgba(74,222,128,0.12);
+}
+.crew-card-core:hover {
+  border-color: rgba(74,222,128,0.3);
+  transform: translateY(-2px);
+}
+.crew-card-core .crew-avatar {
+  width: 52px;
+  height: 52px;
+  font-size: 1.1rem;
+}
+.crew-card-core .crew-avatar-photo {
+  width: 52px;
+  height: 52px;
+}
+.crew-card-core .crew-info { align-items: flex-start; }
+.crew-card-core .crew-name { font-size: 0.95rem; }
+.crew-card-core .crew-tenure { font-size: 0.75rem; }
+
+/* Alumni cards — dignified, not ghosted */
 .crew-card-alumni {
   padding: 1.4rem 1.25rem 1.25rem;
   gap: 0.75rem;
-  opacity: 0.7;
   flex-direction: row;
   text-align: left;
+  border-color: rgba(251,191,36,0.12);
 }
 .crew-card-alumni:hover {
-  opacity: 1;
-  border-color: rgba(255,255,255,0.15);
+  border-color: rgba(251,191,36,0.35);
   transform: translateY(-2px);
 }
 
@@ -605,11 +648,11 @@ img { display: block; max-width: 100%; }
   height: 88px;
   font-size: 2.2rem;
 }
-/* Alumni avatar — small */
+/* Alumni avatar — medium */
 .crew-card-alumni .crew-avatar {
-  width: 44px;
-  height: 44px;
-  font-size: 1.1rem;
+  width: 64px;
+  height: 64px;
+  font-size: 1.4rem;
 }
 
 .active-avatar { background: linear-gradient(135deg, #4ade80 0%, #16a34a 100%); }
@@ -624,13 +667,25 @@ img { display: block; max-width: 100%; }
   color: var(--fg);
 }
 .crew-card-active .crew-name { font-size: 1.2rem; }
-.crew-name-alumni { font-size: 0.95rem; }
+.crew-card-alumni .crew-name { font-size: 0.95rem; }
+
+.crew-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+  display: inline-block;
+}
 
 .crew-tenure { letter-spacing: 0.5px; }
 .crew-card-active .crew-tenure { font-size: 0.82rem; }
 .crew-card-alumni .crew-tenure { font-size: 0.75rem; }
 .active-tenure { color: #4ade80; }
-.alumni-tenure { color: var(--fg-muted); }
+.alumni-tenure { color: #fbbf24; }
 .crew-insta { display: inline-flex; align-items: center; color: var(--fg-muted); text-decoration: none; transition: color 0.2s; }
 .crew-insta:hover { color: #e1306c; }
 
@@ -1111,7 +1166,9 @@ img { display: block; max-width: 100%; }
   .join-logo-wrap { order: -1; }
   .join-logo-img { width: min(320px, 70vw); }
   .join-actions { justify-content: center; }
-  .crew-grid { grid-template-columns: repeat(2, 1fr); }
+  .crew-grid-active { grid-template-columns: repeat(2, 1fr); }
+  .crew-grid-core { grid-template-columns: repeat(2, 1fr); }
+  .crew-grid-alumni { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Small tablet (≤700px) ── */
@@ -1169,8 +1226,8 @@ img { display: block; max-width: 100%; }
 
   /* Crew */
   .crew-grid-active { grid-template-columns: 1fr; }
+  .crew-grid-core { grid-template-columns: 1fr; }
   .crew-grid-alumni { grid-template-columns: 1fr; }
-  .crew-card-alumni { flex-direction: row; }
 
   /* Join section */
   .join-inner { gap: 1.5rem; }
@@ -1215,7 +1272,7 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
 }
 .crew-card-active .crew-avatar-photo { width: 88px; height: 88px; }
-.crew-card-alumni .crew-avatar-photo { width: 44px; height: 44px; }
+.crew-card-alumni .crew-avatar-photo { width: 64px; height: 64px; }
 
 /* ── Nav active state ── */
 .nav-links .nav-link.active { color: var(--fg); }

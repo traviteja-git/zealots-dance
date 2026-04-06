@@ -1,19 +1,41 @@
+export type CrewCategory = 'founder' | 'choreographer' | 'core' | 'alumni';
+
 export interface CrewMember {
   name: string;
   initial: string;
+  role: string;
+  category: CrewCategory;
   tenure: string;
-  photo?: string; // add image path here when photos are available
+  photo?: string;
   instagram?: string;
 }
 
-export const activeMembers: CrewMember[] = [
-  { name: 'Raviteja Tholupunoori', initial: 'RT', tenure: '2018 – Present', photo: '/crew/rt.png', instagram: 'this.raviteja' },
-  { name: 'Ayushi Dash', initial: 'AD', tenure: '2020 – Present', photo: '/crew/ayushi.jpg', instagram: '_caffeine_she_is_' },
-  { name: 'Shreekaar Padma', initial: 'SP', tenure: '2023 – Present', photo: '/crew/sreekaar.jpg', instagram: 'shreekaarpadma' },
+export const categoryOrder: CrewCategory[] = ['founder', 'choreographer', 'core', 'alumni'];
+
+export const categoryLabels: Record<CrewCategory, string> = {
+  founder: 'Founders',
+  choreographer: 'Lead Choreographers',
+  core: 'Core Members',
+  alumni: 'Alumni — Those who built the foundation',
+};
+
+export const crewMembers: CrewMember[] = [
+  // Founders
+  { name: 'Raviteja Tholupunoori', initial: 'RT', role: 'Founder & Captain', category: 'founder', tenure: '2018 – Present', photo: '/crew/rt.png', instagram: 'this.raviteja' },
+  { name: 'Ayushi Dash', initial: 'AD', role: 'Founder & Captain', category: 'founder', tenure: '2020 – Present', photo: '/crew/ayushi.jpg', instagram: '_caffeine_she_is_' },
+  { name: 'Shreekaar Padma', initial: 'SP', role: 'Founder & Captain', category: 'founder', tenure: '2023 – Present', photo: '/crew/sreekaar.jpg', instagram: 'shreekaarpadma' },
+
+  // Core Members
+  { name: 'Teja Bora', initial: 'TB', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
+  { name: 'Vishnu', initial: 'V', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
+  { name: 'Sai Kiran', initial: 'SK', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
+  { name: 'Shoba', initial: 'SS', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
+  // Alumni
+  { name: 'Sagun Somani', initial: 'SS', role: 'Core Member', category: 'alumni', tenure: '2018 – 2019', photo: '/crew/sagun.png', instagram: 'sagsomani' },
+  { name: 'Raghavan Srinivasan', initial: 'RS', role: 'Core Member', category: 'alumni', tenure: '2019 – 2024', photo: '/crew/raghav.jpg', instagram: 'rags_srini' },
+  { name: 'Sowjanya Chilveru', initial: 'SC', role: 'Core Member', category: 'alumni', tenure: '2018 – 2019', photo: '/crew/sowjanya.jpg', instagram: 'chilveru.sai.sowjanya' },
 ];
 
-export const alumniMembers: CrewMember[] = [
-  { name: 'Sagun Somani', initial: 'SS', tenure: '2018 – 2019', photo: '/crew/sagun.png', instagram: 'sagsomani' },
-  { name: 'Raghavan Srinivasan', initial: 'RS', tenure: '2019 – 2024', photo: '/crew/raghav.jpg', instagram: 'rags_srini' },
-  { name: 'Sowjanya Chilveru', initial: 'SC', tenure: '2018 – 2019', photo: '/crew/sowjanya.jpg', instagram: 'chilveru.sai.sowjanya' },
-];
+// Keep legacy exports for any other components that may reference them
+// export const activeMembers = crewMembers.filter(m => m.category !== 'alumni');
+// export const alumniMembers = crewMembers.filter(m => m.category === 'alumni');
