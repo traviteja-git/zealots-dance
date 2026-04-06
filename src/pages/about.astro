@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Story from '../components/Story.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="About | Zealots Dance Crew"
+  description="Zealots Dance Crew — Hyderabad's corporate dance collective. Our story, what we stand for, the styles we perform, and what we've built since 2018."
+>
+  <Nav />
+  <main class="page-content">
+
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <div class="section-tag">About Us</div>
+        <h1 class="section-title about-hero-title">We punch in at 9.<br />We own the floor by night.</h1>
+        <p class="section-sub about-hero-sub">Corporate professionals who refused to leave their passion at the office door. This is the story of how a shared love for dance became something far bigger than any of us expected.</p>
+        <div class="about-hero-actions">
+          <a href="/crew" class="btn btn-primary">Meet the Crew</a>
+          <a href="/book" class="btn btn-outline">Book Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <Story />
+
+    <!-- Stats -->
+    <section class="section about-stats-section">
+      <div class="container">
+        <div class="about-stats-grid">
+          <div class="about-big-stat">
+            <span class="about-big-num">2018</span>
+            <span class="about-big-label">Year Founded</span>
+          </div>
+          <div class="about-big-stat">
+            <span class="about-big-num">120<span class="about-big-unit">+</span></span>
+            <span class="about-big-label">Collaborators</span>
+          </div>
+          <div class="about-big-stat">
+            <span class="about-big-num">3</span>
+            <span class="about-big-label">Dance Styles</span>
+          </div>
+          <div class="about-big-stat">
+            <span class="about-big-num">8<span class="about-big-unit">+</span></span>
+            <span class="about-big-label">Years Strong</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dance Styles -->
+    <section class="section about-styles">
+      <div class="container">
+        <div class="section-tag">Our Styles</div>
+        <h2 class="section-title">Three styles.<br />One crew.</h2>
+        <p class="section-sub">We don't box ourselves in. Our repertoire spans three distinct styles — each with its own flavour, energy, and story.</p>
+        <div class="styles-grid">
+          <div class="style-card">
+            <div class="style-num">01</div>
+            <h3 class="style-name">Bollywood</h3>
+            <p class="style-desc">Our roots. High-energy, expressive, and impossible to sit still to. From classic retro numbers to the latest chart-toppers — this is where it all started for most of us.</p>
+          </div>
+          <div class="style-card">
+            <div class="style-num">02</div>
+            <h3 class="style-name">Hip-Hop</h3>
+            <p class="style-desc">Street-born, rhythm-driven. We bring the raw edge of hip-hop to every performance — tight formations, hard hits, and movement that commands attention.</p>
+          </div>
+          <div class="style-card">
+            <div class="style-num">03</div>
+            <h3 class="style-name">Contemporary</h3>
+            <p class="style-desc">Fluid, emotional, and expressive. When we want to tell a story beyond words, contemporary is the language we reach for.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section about-cta">
+      <div class="container">
+        <div class="about-cta-inner">
+          <h2 class="section-title about-cta-title">Ready to see us<br />on your stage?</h2>
+          <p class="section-sub about-cta-sub">Book us for your next event or join the crew yourself.</p>
+          <div class="about-cta-actions">
+            <a href="/book" class="btn btn-primary">Book Us</a>
+            <a href="/crew" class="btn btn-outline">Meet the Crew</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
