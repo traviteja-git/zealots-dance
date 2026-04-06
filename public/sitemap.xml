@@ -82,6 +82,14 @@
     <image:image><image:loc>https://zealotsdance.com/Zealots/Outings/zealots_outing_22.jpg</image:loc><image:title>Zealots Dance Crew outing crew photo</image:title></image:image>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://zealotsdance.com/about/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- The Crew -->
   <url>
     <loc>https://zealotsdance.com/crew/</loc>
