@@ -26,10 +26,11 @@ export const crewMembers: CrewMember[] = [
   { name: 'Shreekaar Padma', initial: 'SP', role: 'Founder & Captain', category: 'founder', tenure: '2023 – Present', photo: '/crew/sreekaar.jpg', instagram: 'shreekaarpadma' },
 
   // Core Members
-  { name: 'Teja Bora', initial: 'TB', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
-  { name: 'Vishnu', initial: 'V', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
-  { name: 'Sai Kiran', initial: 'SK', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
-  { name: 'Shoba', initial: 'SS', role: 'Core Member', category: 'core', tenure: '2022 – Present' },
+  { name: 'Teja Bora', initial: 'TB', role: 'Core Member', category: 'core', tenure: '2022 – Present', photo: '/crew/teja.jpg' },
+  { name: 'Vishnu', initial: 'V', role: 'Core Member', category: 'core', tenure: '2022 – Present', photo: '/crew/vishnu.jpg' },
+  { name: 'Yoshitha', initial: 'Y', role: 'Core Member', category: 'core', tenure: '2022 – Present', photo: '/crew/yoshitha.jpg' },
+  { name: 'Sai Kiran', initial: 'SK', role: 'Core Member', category: 'core', tenure: '2022 – Present', photo: '/crew/saikiran.jpg' },
+  { name: 'Shoba', initial: 'SS', role: 'Core Member', category: 'core', tenure: '2022 – Present', photo: '/crew/shoba.jpg' },
   // Alumni
   { name: 'Sagun Somani', initial: 'SS', role: 'Core Member', category: 'alumni', tenure: '2018 – 2019', photo: '/crew/sagun.png', instagram: 'sagsomani' },
   { name: 'Raghavan Srinivasan', initial: 'RS', role: 'Core Member', category: 'alumni', tenure: '2019 – 2024', photo: '/crew/raghav.jpg', instagram: 'rags_srini' },
