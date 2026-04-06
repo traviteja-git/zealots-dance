@@ -4,9 +4,6 @@ const photos = [...galleryPhotos, ...outingPhotos];
 ---
 <section class="section gallery" id="gallery">
   <div class="container">
-    <div class="section-tag">Gallery</div>
-    <h2 class="section-title">Moments from<br />the floor.</h2>
-
     <div class="gallery-tabs">
       {categories.map((cat) => (
         <button class={`gallery-tab${cat.id === 'all' ? ' active' : ''}`} data-cat={cat.id}>
