@@ -674,7 +674,7 @@ img {
 /* ── Crew Hero ── */
 .crew-hero {
   background: var(--bg-2);
-  padding: 7rem 1.25rem 3rem;
+  padding: 7rem 1.25rem 1.5rem;
 }
 
 .crew-hero .container {
@@ -783,10 +783,14 @@ img {
   box-shadow: 0 12px 40px rgba(74, 222, 128, 0.1);
 }
 
-/* Core member grid — 4 columns, centred */
+/* Core member grid — 4 per row, last row centred */
 .crew-grid-core {
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.crew-card-core {
+  flex: 0 0 calc(25% - 0.94rem);
 }
 
 /* Core cards — compact row layout */
@@ -944,6 +948,18 @@ img {
 .crew-insta:hover {
   color: #e1306c;
 }
+
+/* ── Page Hero (Gallery, shared) ── */
+.page-hero {
+  background: var(--bg-2);
+  padding: 7rem 1.25rem 1.5rem;
+}
+.page-hero .container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.page-hero-title { margin-bottom: 1rem; }
+.page-hero-sub { max-width: 540px; }
 
 /* ── Gallery ── */
 .gallery {
@@ -1389,11 +1405,18 @@ img {
   border-radius: 10px;
   padding: 1.5rem 1.25rem;
   text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .book-card:hover {
   border-color: rgba(255, 60, 60, 0.35);
+  transform: translateY(-3px);
+}
+
+.book-card-selected {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 2px rgba(255, 60, 60, 0.2);
   transform: translateY(-3px);
 }
 
@@ -1858,8 +1881,8 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .crew-grid-core {
-    grid-template-columns: repeat(3, 1fr);
+  .crew-card-core {
+    flex: 0 0 calc(33.33% - 0.84rem);
   }
 
   .crew-grid-alumni {
@@ -2007,8 +2030,8 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .crew-grid-core {
-    grid-template-columns: 1fr;
+  .crew-card-core {
+    flex: 0 0 100%;
   }
 
   .crew-grid-alumni {

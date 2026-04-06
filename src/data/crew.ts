@@ -21,7 +21,7 @@ export const categoryLabels: Record<CrewCategory, string> = {
 
 export const crewMembers: CrewMember[] = [
   // Founders
-  { name: 'Raviteja Tholupunoori', initial: 'RT', role: 'Founder & Captain', category: 'founder', tenure: '2018 – Present', photo: '/crew/rt.png', instagram: 'this.raviteja' },
+  { name: 'Raviteja Tholupunoori', initial: 'RT', role: 'Founder & Captain', category: 'founder', tenure: '2018 – Present', photo: '/crew/raviteja.png', instagram: 'this.raviteja' },
   { name: 'Ayushi Dash', initial: 'AD', role: 'Founder & Captain', category: 'founder', tenure: '2020 – Present', photo: '/crew/ayushi.jpg', instagram: '_caffeine_she_is_' },
   { name: 'Shreekaar Padma', initial: 'SP', role: 'Founder & Captain', category: 'founder', tenure: '2023 – Present', photo: '/crew/sreekaar.jpg', instagram: 'shreekaarpadma' },
 
