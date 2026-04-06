@@ -36,7 +36,7 @@ export const crewMembers: CrewMember[] = [
   { name: 'Komali', initial: 'K', role: 'Core Member', category: 'core', tenure: '2024 – Present', photo: '/crew/core/komali.jpg' },
   { name: 'Nancy', initial: 'N', role: 'Core Member', category: 'core', tenure: '2024 – Present', photo: '/crew/core/nancy.jpg' },
   { name: 'Pooja', initial: 'P', role: 'Core Member', category: 'core', tenure: '2024 – Present', photo: '/crew/core/pooja.jpg' },
-  { name: 'Akash', initial: 'AS', role: 'Core Member', category: 'core', tenure: '2024 – 2025', photo: '/crew/core/akash.jpg' },
+  { name: 'Akash', initial: 'AS', role: 'Core Member', category: 'core', tenure: '2024 – 2025', photo: '/crew/core/akash.jpeg' },
   { name: 'Piyush', initial: 'P', role: 'Core Member', category: 'core', tenure: '2024 – 2025', photo: '/crew/core/piyush.jpg' },
   { name: 'Saitej', initial: 'ST', role: 'Core Member', category: 'core', tenure: '2024 – 2025', photo: '/crew/core/saitej.jpg' },
   { name: 'Sailesh', initial: 'SL', role: 'Core Member', category: 'core', tenure: '2024 – Present', photo: '/crew/core/sailesh.jpg' },
