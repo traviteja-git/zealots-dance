@@ -6,24 +6,24 @@
     <h2 class="section-title">Got an event?<br />We've got the floor.</h2>
     <p class="section-sub">Sangeet Night, Corporate events, flash mobs — if there's a stage and a crowd, we're in. Fill the form below or reach out directly.</p>
     <div class="book-grid">
-      <div class="book-card">
+      <div class="book-card" data-event="Corporate Event" role="button" tabindex="0">
         <div class="book-icon">🏢</div>
         <h3>Corporate Events</h3>
         <p>We know the culture — and we know how to own it.</p>
       </div>
-      <div class="book-card">
+      <div class="book-card" data-event="Sangeet / Wedding" role="button" tabindex="0">
         <div class="book-icon">💃🕺</div>
         <h3>Sangeet & Weddings</h3>
         <p>Unforgettable sangeet and reception performances.</p>
       </div>
-      <div class="book-card">
+      <div class="book-card" data-event="Flash Mob" role="button" tabindex="0">
         <div class="book-icon">⚡</div>
         <h3>Flash Mobs</h3>
         <p>Surprise your crowd with something they'll never forget.</p>
       </div>
     </div>
 
-    <div class="book-form-wrap">
+    <div class="book-form-wrap" id="book-form-wrap">
       <div class="book-form-header">
         <h3 class="book-form-title">Send an Enquiry</h3>
         <p class="book-form-sub">We'll reply to your email within 24 hours.</p>
@@ -100,6 +100,23 @@
 </section>
 
 <script>
+  // Event type cards pre-fill the dropdown and scroll to form
+  const bookCards = document.querySelectorAll('.book-card[data-event]');
+  const eventSelect = document.getElementById('booking-event') as HTMLSelectElement;
+  const formWrap = document.getElementById('book-form-wrap');
+
+  bookCards.forEach(card => {
+    const activate = () => {
+      const val = card.getAttribute('data-event');
+      if (eventSelect && val) eventSelect.value = val;
+      bookCards.forEach(c => c.classList.remove('book-card-selected'));
+      card.classList.add('book-card-selected');
+      formWrap?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    card.addEventListener('click', activate);
+    card.addEventListener('keydown', (e) => { if ((e as KeyboardEvent).key === 'Enter') activate(); });
+  });
+
   const FORMSPREE_ID = 'mlgojddy';
 
   const form = document.getElementById('book-form') as HTMLFormElement;
